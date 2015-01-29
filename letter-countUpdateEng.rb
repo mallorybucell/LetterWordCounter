@@ -14,6 +14,7 @@ input = input.downcase
 
 letters = input.split("")
 alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+#could do this simpler with just range_alpha = ("a".."z")
 result = {}
 
 letters.each do |letter|
@@ -32,21 +33,23 @@ letters.each do |letter|
 	# VVVV
 
 	# could use result.has_key? or result.include?
-  if alphabet.include?(letter) == false #If 'character is not a letter of the alphabet, move on'
-    next
-  elsif result[letter]
-  # increment count for that letter by 1
-  # result[letter] += 1
-    old_count = result[letter]
-    result[letter] = old_count + 1
-  else
-  # add to result with count 1
-	 result[letter] = 1
-	end
-
+  when alphabet.include?(letter)
+    if result[letter]
+    # increment count for that letter by 1
+    # result[letter] += 1
+      old_count = result[letter]
+      result[letter] = old_count + 1
+    else
+    # add to result with count 1
+  	 result[letter] = 1
+  	end
+  end
 end
 #sort Hash.result by value
 result = result.sort_by {|k,v| v}.reverse.to_h
 
 
 puts "Result is: #{result}"
+
+def encrypt
+  #
