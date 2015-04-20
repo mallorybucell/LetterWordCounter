@@ -1,4 +1,4 @@
-point_values = Hash.new
+˜point_values = Hash.new
 point_values["a"] = "m"
 point_values["b"] = "n"
 point_values["c"] = "o"
